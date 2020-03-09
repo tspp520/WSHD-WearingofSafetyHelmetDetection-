@@ -1,15 +1,26 @@
-#  YOLOv3_TensorFlow
+#  WSHD-Wearing of SafetyHelmet Detection
 
 ### 1. Introduction
 
-This is my implementation of [YOLOv3](https://pjreddie.com/media/files/papers/YOLOv3.pdf) in pure TensorFlow.
-It contains the full pipeline of training and evaluation on your own dataset. The key features of this repo are:
+​		This is our implementation of training a helmet detection with the original author's modified [YOLOv3,](https://github.com/wizyoung/YOLOv3_TensorFlow),WSHD provide the dataset used for both safety helmet wearing and human head detection. It includes 7581 images with 9044 human safety helmet wearing objects(positive) and 111514 normal head objects(not wearing or negative). The positive objects got from goolge or baidu, and we manually labeld with LabelImg. Some of negative objects got from SCUT-HEAD. We fixed some bugs for original SCUT-HEAD and make the data can be directly loaded as normal Pascal VOC format.  The key features of this repo are:
 
 - Efficient tf.data pipeline
+
+- It is a  implementation of [YOLOv3](https://pjreddie.com/media/files/papers/YOLOv3.pdf) in pure TensorFlow.
+
 - Weights converter (converting pretrained darknet weights on COCO dataset to TensorFlow checkpoint.)
+
 - Extremely fast GPU non maximum supression.
+
 - Full training and evaluation pipeline.
+
 - Kmeans algorithm to select prior anchor boxes.
+
+- Also we provide some pretrained models with MXNet Gluon CV.
+
+  ## ***please* *give* *a* *star* if you *like* it.**
+
+https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/blob/master/image/7_result.jpg
 
 ### 2. Requirements
 
@@ -23,9 +34,7 @@ Packages:
 
 ### 3. Weights convertion
 
-The pretrained darknet weights file can be downloaded [here]
-(https://pjreddie.com/media/files/yolov3.weights).
-Place this weights file under directory `./data/darknet_weights/` and then run:
+The pretrained darknet weights file can be downloaded [here](https://pjreddie.com/media/files/yolov3.weights). Place this weights file under directory `./data/darknet_weights/` and then run:
 
 ```shell
 python convert_weight.py
@@ -42,22 +51,22 @@ There are some demo images and videos under the `./data/demo_data/`. You can run
 Single image test demo:
 
 ```shell
-python test_single_image.py ./data/demo_data/messi.jpg
+python test_single_image.py ./data/demo_data/gongdi01.jpg
 ```
 
 Video test demo:
 
 ```shell
-python video_test.py ./data/demo_data/video.mp4
+python video_test.py ./data/demo_data/video01.mp4
 ```
 
 Some results:
 
-![](https://github.com/wizyoung/YOLOv3_TensorFlow/blob/master/data/demo_data/results/dog.jpg?raw=true)
+![](https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/blob/master/image/7_result.jpg?raw=true)
 
-![](https://github.com/wizyoung/YOLOv3_TensorFlow/blob/master/data/demo_data/results/messi.jpg?raw=true)
+![](https://github.com/njvisionpower/SafetyHelmetWearing-Dataset/blob/master/image/6_result.jpg?raw=true)
 
-![](https://github.com/wizyoung/YOLOv3_TensorFlow/blob/master/data/demo_data/results/kite.jpg?raw=true)
+![](https://github.com/njvisionpower/SafetyHelmetWearing-Dataset/raw/master/image/4_result.jpg?raw=true)
 
 Compare the kite detection results with TensorFlow's offical API result [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/img/kites_detections_output.jpg).
 
@@ -108,10 +117,8 @@ Generate the `data.names` file under `./data/my_data/` directory. Each line repr
 For example:
 
 ```
-bird
-person
-bike
-...
+hat
+head
 ```
 
 The COCO dataset class names file is placed at `./data/coco.names`.
