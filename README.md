@@ -18,7 +18,13 @@
 
 - Also we provide some pretrained models with MXNet Gluon CV.
 
-  ## ***please* *give* *a* *star* if you *like* it.**
+  
+  
+  ## If you like it - give me a star!THanks very much!
+  
+  If this article has a little help for you, please lift a finger, give this code a small Star, let me share more content next time, and continue to improve this branch! Thank you very much!
+  
+  如果本篇对你有一点点帮助，请举手之劳，给本代码一个小小的Star，让我下次分享更多内容，以及持续完善该环节！谢谢！
 
 https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/blob/master/image/7_result.jpg
 
@@ -231,4 +237,8 @@ I referred to many fantastic repos during the implementation:
 [pjreddie/darknet](https://github.com/pjreddie/darknet)
 
 [dmlc/gluon-cv](https://github.com/dmlc/gluon-cv/tree/master/scripts/detection/yolo)
+
+**If this article has a little help for you, please lift a finger, give this code a small Star, let me share more content next time, and continue to improve this branch! Thank you very much!**
+
+### **如果本篇对你有一点点帮助，请举手之劳，给本代码一个小小的Star，让我下次分享更多内容，以及持续完善该环节！谢谢！**
 
